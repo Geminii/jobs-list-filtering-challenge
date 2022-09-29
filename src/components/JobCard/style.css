@@ -48,7 +48,8 @@
 
 .job-content-details-title {
   margin: 0;
-  color: var(--desaturated-dark-cyan);
+  font-size: 22px;
+  color: var(--very-dark-grayish-cyan);
 }
 
 .job-content-details-info {  
@@ -95,6 +96,14 @@
     overflow: hidden;
     gap: 1.5rem; /* 24px */
     padding: 2rem 2.5rem; /* 32px 40px */
+  }
+
+  .job:hover {
+    cursor: pointer;
+  }
+
+  .job:hover .job-content-details-title {
+    color: var(--desaturated-dark-cyan);
   }
 
   .job:hover::before {
