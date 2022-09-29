@@ -1,10 +1,17 @@
-import JobCard from '../JobCard'
+import JobCard, { Job } from '../JobCard'
 import './style.css'
 
-function JobsList() {
+type JobsListProps = {
+  jobs: Job[]
+  addTag: (tag: string) => void
+}
+
+function JobsList({ jobs, addTag }: JobsListProps) {
   return (
     <div className="jobs-list">
-      <JobCard />
+      {jobs.map((job: Job) => (
+        <JobCard key={job.id} job={job} addTag={addTag} />
+      ))}
     </div>
   )
 }

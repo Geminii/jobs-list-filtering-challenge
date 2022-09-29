@@ -1,46 +1,57 @@
 import Badge from '../Badge'
 import './style.css'
 
-function JobCard() {
+export type Job = {
+  id: number
+  company: string
+  logo: string
+  new: boolean
+  featured: boolean
+  position: string
+  role: string
+  level: string
+  postedAt: string
+  contract: string
+  location: string
+  languages: string[]
+  tools: string[]
+}
+
+type JobCardProps = {
+  job: Job
+  addTag: (tag: string) => void
+}
+
+function JobCard({ job, addTag }: JobCardProps) {
   return (
     <div className="job">
-      <img src="/logos/photosnap.svg" alt="Photosnap" className="job-logo" />
+      <img src={job.logo} alt={job.company} className="job-logo" />
 
       <div className="job-content">
         <div className="job-content-details">
           <div className="job-detail-company">
-            <span className="job-detail-company-name">Photosnap</span>
+            <span className="job-detail-company-name">{job.company}</span>
             <div className="job-detail-company-tags">
-              <Badge name="New !" />
-              <Badge name="Featured" variant="secondary" />
+              {job.new && <Badge name="New !" />}
+              {job.featured && <Badge name="Featured" variant="secondary" />}
             </div>
           </div>
 
-          <h1 className="job-content-details-title">Senior Frontend Developer</h1>
+          <h1 className="job-content-details-title">{job.position}</h1>
 
           <div className="job-content-details-info">
-            <span>1d ago</span>
-            <span>Full Time</span>
-            <span>USA only</span>
+            <span>{job.postedAt}</span>
+            <span>{job.contract}</span>
+            <span>{job.location}</span>
           </div>
         </div>
 
         <div className="job-tags">
-          <button type="button" className="tag">
-            Frontend
-          </button>
-          <button type="button" className="tag">
-            Senior
-          </button>
-          <button type="button" className="tag">
-            Html
-          </button>
-          <button type="button" className="tag">
-            Css
-          </button>
-          <button type="button" className="tag">
-            JavaScript
-          </button>
+          {job.languages.map(language => (
+            <button key={language} type="button" className="tag" onClick={() => addTag(language)}>
+              {language}
+            </button>
+          ))}
         </div>
       </div>
     </div>

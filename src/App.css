@@ -13,7 +13,7 @@ header {
 
 .container {
   background-color: var(--light-grayish-cyan-bg);
-  height: calc(100vh - var(--header-height));
+  min-height: calc(100vh - var(--header-height));
 }
 
 .wrapper {
@@ -21,4 +21,5 @@ header {
   margin: 0 auto;
   max-width: var(--wrapper-max-width);
   padding: 0 var(--wrapper-padding-x);
+  padding-bottom: 3rem; /* 48px */
 }

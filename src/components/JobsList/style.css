@@ -5,12 +5,13 @@
 .jobs-list {
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
-  gap: 1.5rem; /* 24px */
+  gap: 3rem; /* 48px */
   padding-top: calc(var(--job-filters-top-position) + 2 * var(--job-list-padding-y))
 }
 
 @media (min-width: 768px) {
   .jobs-list {
+    gap: 1.5rem; /* 24px */
     padding-top: calc(var(--job-filters-top-position) + var(--job-list-padding-y))
   }
 }
