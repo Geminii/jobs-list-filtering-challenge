@@ -1,0 +1,24 @@
+.job-filter-tag {
+  display: flex;
+  align-content: center;
+  border-radius: 0.25rem; /* 4px */
+  overflow: hidden;
+}
+
+.job-filter-tag-name {
+  color: var(--desaturated-dark-cyan);
+  background-color: var(--light-grayish-cyan-filter);
+  padding: 0.5rem 0.75rem; /* 8px 12px */
+  line-height: 1rem; /* 16px */;
+}
+
+.job-filter-tag-btn {
+  background-color: var(--desaturated-dark-cyan);
+  border: 0;
+  display: flex;
+  align-items: center;
+}
+
+.job-filter-tag-btn:hover {
+  background-color: var(--very-dark-grayish-cyan);
+}

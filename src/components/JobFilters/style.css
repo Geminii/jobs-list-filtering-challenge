@@ -1,0 +1,37 @@
+:root {
+  --padding-x: 2.5rem; /* 40px */
+  --padding-y: 1.25rem; /* 20px */
+  --job-filters-top-position: 2.25rem; /* 36px */
+}
+
+.job-filters {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  padding: var(--padding-y) var(--padding-x);
+  border-radius: 0.375rem; /* 6px */
+  gap: 2rem; /* 32px */
+  position: absolute;
+  top: calc(var(--job-filters-top-position) * -1);
+  width: calc(100vw - (2 * (var(--padding-x) + var(--wrapper-padding-x))));
+  max-width: calc(var(--wrapper-max-width) - (2 * var(--padding-x)));
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.job-filters-btn {
+  color: var(--dark-grayish-cyan);
+  background: none;
+  border: 0;
+}
+
+.job-filters-btn:hover {
+  color: var(--desaturated-dark-cyan);
+  text-decoration: underline;
+}
+
+.job-filters-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem; /* 16px */
+}

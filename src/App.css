@@ -1,41 +1,24 @@
-#root {
-  max-width: 1280px;
+:root {
+  --header-height: 9.75rem; /* 156px */
+  --wrapper-max-width: 69.375rem; /* 1110px */
+  --wrapper-padding-x:  1.5rem; /* 24px */
+}
+
+header {
+  min-height: var(--header-height);
+  background: url('./assets/bg-header.svg');
+  background-color: var(--desaturated-dark-cyan);
+  object-fit: contain;
+}
+
+.container {
+  background-color: var(--light-grayish-cyan-bg);
+  height: calc(100vh - var(--header-height));
+}
+
+.wrapper {
+  position: relative;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  max-width: var(--wrapper-max-width);
+  padding: 0 var(--wrapper-padding-x);
 }
