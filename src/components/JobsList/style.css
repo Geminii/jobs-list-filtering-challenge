@@ -1,0 +1,16 @@
+:root {
+  --job-list-padding-y: 2.5rem; /* 40px */
+}
+
+.jobs-list {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.5rem; /* 24px */
+  padding-top: calc(var(--job-filters-top-position) + 2 * var(--job-list-padding-y))
+}
+
+@media (min-width: 768px) {
+  .jobs-list {
+    padding-top: calc(var(--job-filters-top-position) + var(--job-list-padding-y))
+  }
+}

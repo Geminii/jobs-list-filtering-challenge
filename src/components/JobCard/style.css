@@ -1,0 +1,125 @@
+.job {
+  position: relative;
+  display: flex;
+  gap: 1.5rem; /* 24px */
+  padding: 2rem 1.375rem; /* 32px 22px */
+  background: white;
+  border-radius: 0.375rem; /* 6px */
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.job-logo {
+  position: absolute;
+  top: -1.5rem; /* -24px */
+  left: 1.5rem; /* 24px */
+  width: 3rem; /* 48px */
+  height: 3rem; /* 48px */
+  z-index: 2;
+}
+
+.job-content {
+  display: flex;
+  gap: 1rem; /* 16px */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.job-content-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* 8px */
+}
+
+.job-detail-company {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* 16px */
+}
+
+.job-detail-company-name {
+  color: var(--desaturated-dark-cyan);
+}
+
+.job-detail-company-tags {
+  display: flex;
+  gap: 0.5rem; /* 8px */
+}
+
+.job-content-details-title {
+  margin: 0;
+  color: var(--desaturated-dark-cyan);
+}
+
+.job-content-details-info {  
+  display: flex;
+  gap: 2.25rem; /* 36px */
+  color: var(--dark-grayish-cyan)
+}
+
+.job-content-details-info span {
+  position: relative;
+}
+
+.job-content-details-info span:not(:first-child)::before {
+  position: absolute;
+  content:"• ";
+  left: -1.5rem; /* -24px */
+}
+
+.job-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem; /* 16px */
+  align-items: center;
+  border-top: 1px solid var(--dark-grayish-cyan);
+  padding-top: 1rem; /* 16px */
+}
+
+.tag {
+  background-color: var(--light-grayish-cyan-filter);
+  color: var(--desaturated-dark-cyan);
+  padding: 0.5rem; /* 8px */
+  border-radius: 0.375rem; /* 6px */
+  border: 0;
+  font-weight: 700;
+}
+
+.tag:hover {
+  color: white;
+  background-color: var(--desaturated-dark-cyan);
+}
+
+@media (min-width: 768px) {
+  .job {
+    overflow: hidden;
+    gap: 1.5rem; /* 24px */
+    padding: 2rem 2.5rem; /* 32px 40px */
+  }
+
+  .job:hover::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: '';
+    width: 0.25rem; /* 4px */
+    background-color: var(--desaturated-dark-cyan);
+    height: 100%;
+  }
+
+  .job-content {
+    flex-direction: row;
+    gap: 0;
+  }
+
+  .job-logo {
+    position: initial;
+    width: 5.5rem; /* 88px */
+    height: 5.5rem; /* 88px */
+  }
+
+  .job-tags {
+    border: none;
+    padding-top: 0;
+  } 
+}

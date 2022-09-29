@@ -1,5 +1,6 @@
 import './App.css'
 import JobFilters from './components/JobFilters'
+import JobsList from './components/JobsList'
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <div className="container">
         <div className="wrapper">
           <JobFilters />
+          <JobsList />
         </div>
       </div>
     </>
