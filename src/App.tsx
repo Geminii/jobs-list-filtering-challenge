@@ -6,6 +6,8 @@ import JobsList from './components/JobsList'
 
 import data from './data/data.json'
 
+const KEY_STORAGE = 'tags'
+
 function App() {
   const [tags, setTags] = useState<string[]>([])
   const [jobs, setJobs] = useState<Job[]>([])
@@ -13,22 +15,34 @@ function App() {
   const filteredJobs =
     tags.length > 0 ? jobs.filter(job => tags.some(tag => job.languages.includes(tag))) : jobs
 
+  const updateTagsInStorage = (newTags: string[]) => {
+    setTags(newTags)
+    localStorage.setItem(KEY_STORAGE, JSON.stringify(newTags))
+  }
+
   const addTag = (tag: string) => {
     if (tags.includes(tag)) return
 
     const newTags = [...tags]
     newTags.push(tag)
 
-    setTags(newTags)
+    updateTagsInStorage(newTags)
   }
 
   const removeTag = (tagToRemove: string) => {
-    setTags(tags.filter((tag: string) => tag.toLowerCase() !== tagToRemove.toLowerCase()))
+    const newTags = tags.filter((tag: string) => tag.toLowerCase() !== tagToRemove.toLowerCase())
+    updateTagsInStorage(newTags)
   }
 
-  const clearFilters = () => setTags([])
+  const clearFilters = () => updateTagsInStorage([])
 
-  useEffect(() => setJobs(data), [])
+  useEffect(() => {
+    const localStorageTags = localStorage.getItem(KEY_STORAGE)
+
+    if (localStorageTags) setTags(JSON.parse(localStorageTags))
+
+    setJobs(data)
+  }, [])
 
   return (
     <>
