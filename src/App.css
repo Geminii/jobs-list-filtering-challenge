@@ -1,7 +1,7 @@
 :root {
   --header-height: 9.75rem; /* 156px */
   --wrapper-max-width: 69.375rem; /* 1110px */
-  --wrapper-padding-x:  1.5rem; /* 24px */
+  --wrapper-padding-x: 1.5rem; /* 24px */
 }
 
 header {
